@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  external-services:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-08-26T20:05:12.962313895Z"
+    description: A Helm chart for managing my homelab services
+    digest: 3a9b576380c6753376702c34aa0971a92fb38c245d6f369c0ac46b2e4663e656
+    name: external-services
+    type: application
+    urls:
+    - https://github.com/rubefarm/homelab-helm/releases/download/external-services-0.0.1/external-services-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-08-26T20:05:12.962319075Z"
