@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.serviceName }}
+spec:
+  ports:
+  - name: {{ ternary "https" "http" .Values.secured }}
+    port: {{ .Values.servicePort }}
+    protocol: TCP
+    targetPort: {{ .Values.servicePort }}
+  type: ClusterIP
