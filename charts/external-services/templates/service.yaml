@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.service.name }}
 spec:
   ports:
-  - name: {{ ternary "https" "http" .Values.addTLS }}
+  - name: {{ ternary "http" "https" .Values.addTLS }}
     port: {{ .Values.service.port }}
     protocol: TCP
     targetPort: {{ .Values.service.port }}
