@@ -4,6 +4,8 @@ apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TLSRoute
 metadata:
   name: {{ .Values.service.name }}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.service.hostname }}
 spec:
   hostnames:
   - {{ .Values.service.hostname }}

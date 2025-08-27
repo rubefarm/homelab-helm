@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - name: {{ ternary "https" "http" .Values.addTLS }}
-    port: {{ .Values.servicePort }}
+    port: {{ .Values.service.port }}
     protocol: TCP
-    targetPort: {{ .Values.servicePort }}
+    targetPort: {{ .Values.service.port }}
   type: ClusterIP
