@@ -1,12 +1,12 @@
-{{- if .Values.secured }}
+{{- if not .Values.addTLS }}
 ---
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TLSRoute
 metadata:
   name: {{ .Values.service.name }}
 spec:
   hostnames:
-  - {{ .Values.service.hostname }}}}
+  - {{ .Values.service.hostname }}
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
@@ -17,11 +17,7 @@ spec:
     - group: ""
       kind: Service
       name: {{ .Values.service.name }}
-      port: {{ .Values.service.port }}
       namespace: {{ .Release.Namespace }}
+      port: {{ .Values.service.port }}
       weight: 1
-    matches:
-    - path:
-        type: PathPrefix
-        value: /
 {{- end }}

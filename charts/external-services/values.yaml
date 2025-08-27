@@ -8,4 +8,4 @@ service:
 gateway:
   name: my-gateway
   namespace: default
-secured: false
+addTLS: false
