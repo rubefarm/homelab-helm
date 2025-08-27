@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.serviceName }}
+  name: {{ .Values.service.name }}
 spec:
   ports:
-  - name: {{ ternary "https" "http" .Values.secured }}
+  - name: {{ ternary "https" "http" .Values.addTLS }}
     port: {{ .Values.servicePort }}
     protocol: TCP
     targetPort: {{ .Values.servicePort }}
